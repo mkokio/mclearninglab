@@ -1,0 +1,32 @@
+{% extends "learning_logs/base.html" %}
+
+{% block page_header %}
+<h1>Topics</h1>
+{% endblock page_header %}
+
+{% block content %}
+
+  <ul>
+    {% for topic in topics %}
+      <li><h3>
+        <a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a>
+      </h3></li>
+    {% empty %}
+      <li><h3>No topics have been added yet.</h3></li>
+    {% endfor %}
+  </ul>
+
+  <h3><a href="{% url 'learning_logs:new_topic' %}"><i>Add a new topic</i></a></h3>
+
+{% endblock content %}
+
+<!-- 
+extends tag to inherit from base.html
+ul is an unordered list
+"for topic in topics" is a "for loop" in html format
+{{ topic }} at will be replaced by the value of topic on each pass through the loop.
+li is a list item
+empty tag tells Django what to do if no items in the list
+close out the for loop
+close out the unordered list loop
+-->

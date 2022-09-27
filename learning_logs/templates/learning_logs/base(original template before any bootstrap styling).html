@@ -1,0 +1,19 @@
+<p>
+    <a href ="{% url 'learning_logs:index' %}">Learning Log</a> - 
+    <a href="{% url 'learning_logs:topics' %}">Topics</a> - 
+    {% if user.is_authenticated %}
+      Hello, {{ user.username  }}.
+      <a href="{% url 'users:logout' %}">Log out</a>
+    {% else %}
+      <a href="{% url 'users:register' %}">Register</a> -
+      <a href="{% url 'users:login' %}">Log In</a>
+    {% endif %}
+  </p>
+  
+  {% block content %}{% endblock content %}
+  -->
+  <!--
+    Django’s authentication system, every template has a user variable
+  available, which always has an is_authenticated attribute set: the attribute is
+  True if the user is logged in and False if they aren’t.
+  -->
