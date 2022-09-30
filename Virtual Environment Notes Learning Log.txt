@@ -88,3 +88,48 @@ Python 3.10.4
 runtime.txt (same directory as manage.py) write the following:
 python-3.10.4
 
+Add to settings.py
+# Heroku settings.
+import django_heroku
+django_heroku.settings(locals())
+
+make "Procfile" (no extension) same directory as manage.py
+web: gunicorn learning_log.wsgi --log-file -
+
+Configure git (to track the project's files)
+(ll_env)learning_log$ git config --global user.name "mcocchio"
+(ll_env)learning_log$ git config --global user.email "marccocchio@gmail.com"
+
+Create .gitignore file (same directory as manage.py)
+ll_env/
+__pycache__/
+*.sqlite3
+
+Commit the project
+(ll_env)learning_log$ git init
+(ll_env)learning_log$ git add .
+(ll_env)learning_log$ git commit -am "Ready for deployment to heroku."
+(ll_env)learning_log$ git status
+(ll_env)learning_log$
+
+Push to Heroku
+(ll_env)learning_log$ heroku login
+(ll_env)learning_log$ heroku create
+
+Check that the server process started correctly
+(ll_env)learning_log$ heroku ps
+
+Set Up the Database on Heroku
+(ll_env)learning_log$ heroku run python manage.py migrate
+453
+
+
+
+
+
+
+
+
+
+
+

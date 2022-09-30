@@ -1,4 +1,3 @@
-from socket import fromshare
 from django import forms
 
 from .models import Topic, Entry
@@ -18,4 +17,4 @@ class EntryForm(forms.ModelForm):
                                     #widget is an HTML form element, such as a single-line text box, multi-line
                                     #  text area, or drop-down list. By including the widgets attribute, you can
                                     #  override Django’s default widget choices. By telling Django to use a forms.
-                                    # Textarea element, we're customizing the input widget for the field "text" to be 80 columns wide.
+                                    # Text
