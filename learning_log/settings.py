@@ -142,3 +142,7 @@ django_heroku.settings(locals())
             #the settings() function. This function modifies
             #some settings that need specific values for the
             #Heroku environment.
+if os.environ.get('DEBUG') == 'TRUE':
+DEBUG = True
+elif os.environ.get('DEBUG') == 'FALSE':
+DEBUG = False
