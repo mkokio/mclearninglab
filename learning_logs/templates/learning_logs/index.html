@@ -12,3 +12,33 @@
         role="button">Register &raquo;</a> <!--&raquo is an html element that looks like this {>>}-->
   </div>
 {% endblock page_header %}
+{% block content %}
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">What I did</button>
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <b>What I did:</b>
+      Created this project in Django
+      Styled with Bootstrap
+      Deployed to Heroku
+      
+    </div>
+  </div>
+</div>
+
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">What you can do</button>
+
+<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <b>What you can do</b>
+      Register as a new user
+      Add and view your own topics
+      Add and edit your own entries
+      Log Out
+      (Other users can't access your data,
+      but please don't input anything super secret)
+    </div>
+  </div>
+</div>
+{% endblock content %}
