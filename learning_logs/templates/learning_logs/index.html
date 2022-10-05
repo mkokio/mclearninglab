@@ -1,43 +1,43 @@
 {% extends "learning_logs/base.html" %}
 {% block page_header %}
-  <div class="jumbotron"><!--a div element with a set of styling directives applied to it-->
-    <h1 class="display-3">Keep track your learning</h1>
+<style>
+  modal-title {font-weight: bold; text-align: center;}
+  notes {font-style: italic;}
+</style>  
+<div class="jumbotron"><!--a div element with a set of styling directives applied to it-->
+    <h1 class="display-3">Keep track of your learning</h1>
     
-    <p class="lead">Make your own Learning Log, and keep a list of the
+    <p class="lead">
+        <b>What you can do:</b><br>
+          <ul>
+            <li>Register as a new user and log in</li>
+            <li>Add and view your own topics</li>
+            <li>Add and edit your own entries</li>
+            <li>Log Out</li>
+          </ul>
+        <notes>(Other users can't access your data, but please don't input anything super secret)</notes>
+        <br><br>
+        Make your own Learning Log, and keep a list of the
         topics you're learning about. Whenever you learn something new
         about a topic, make an entry summarizing what you've learned.
-        [this text was copied directly from the textbook]</p>
+        <notes>[this text was copied directly from the textbook]</notes></p>
 
     <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
         role="button">Register &raquo;</a> <!--&raquo is an html element that looks like this {>>}-->
   </div>
 {% endblock page_header %}
 {% block content %}
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">What I did</button>
+<button type="button" class="btn btn-info" data-toggle="modal" data-target=".bd-example-modal-sm">What I did</button>
 <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
-      <b>What I did:</b>
-      Created this project in Django
-      Styled with Bootstrap
-      Deployed to Heroku
-      
-    </div>
-  </div>
-</div>
-
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">What you can do</button>
-
-<div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <b>What you can do</b>
-      Register as a new user
-      Add and view your own topics
-      Add and edit your own entries
-      Log Out
-      (Other users can't access your data,
-      but please don't input anything super secret)
+      <modal-title>What I did:</modal-title>
+        <ul>
+          <li>Created this project in Django</li>
+          <li>Styled with Bootstrap</li>
+          <li>Deployed to Heroku</li>
+          <li>Pushed to <a href="https://github.com/mkokio/mclearninglab">GitHub</a></li>
+        </ul>
     </div>
   </div>
 </div>
